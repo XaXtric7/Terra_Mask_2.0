@@ -1,0 +1,646 @@
+﻿A Self-Supervised Approach to Land Cover
+Segmentation
+
+Charles Moore1,* and Dakota Hester2,3,*
+
+1Department of Computer Science and Engineering, Mississippi State University,
+Starkvile, MS 39759, USA
+
+2Department of Sustainable Bioproducts, Mississippi State University, Starkvile, MS
+39759, USA
+
+3Department of Agricultural and Biological Engineering, Mississippi State
+University, Starkvile, MS 39759, USA
+
+*Corresponding authors: {cam1271,dh2306}@msstate.edu
+
+Abstract
+
+Land use/land cover change (LULC) maps are integral resources in
+earth science and agricultural research. Due to the nature of such maps,
+the creation of LULC maps is often constrained by the time and human
+resources necessary to accurately annotate satellite imagery and remote
+sensing data. While computer vision models that perform semantic seg-
+mentation to create detailed labels from such data are not uncommon, lit-
+tle research has been done on self-supervised and unsupervised approaches
+to labelling LULC maps without the use of ground-truth masks. Here, we
+demonstrate a self-supervised method of land cover segmentation that has
+no need for high-quality ground truth labels. The proposed deep learning
+employs a frozen pre-trained ViT backbone transferred from DINO in a
+STEGO architecture and is fine-tuned using a custom dataset consisting
+of very high resolution (VHR) sattelite imagery. After only 10 epochs
+of fine-tuning, an accuracy of roughly 52% was observed across 5 sam-
+ples, signifying the feasibility of self-supervised models for the automated
+labelling of VHR LULC maps.
+
+1 Introduction forestation, wildland fires, and atmo-
+spheric research [1, 2, 3]. Numerous
+
+High-quality land cover use and land advancements in remote sensing equip-
+cover change (LU/LC) maps are crit- ment, computational resources, and
+ical to understanding and evaluating artificial have somewhat alleviated the
+human interaction with natural re- need for large scale human-annotation
+sources and the effects of such interac- of satellite imagery and remote sens-
+tions on both the natural environment ing data, yet little research on scaling
+and humans. LU/LC maps are criti- such techniques to very high resolution
+cal in documenting climate change, de- (VHR) data is still in its infancy [4, 5].
+
+1
+
+arXiv:2310.18251v1  [cs.CV]  27 Oct 2023
+
+
+
+The goal of this work is to address by a variety of researchers in various
+the potential of self-supervised meth- fields. LU/LC allow researchers to
+ods of training to overcome the labeled monitor developments in environmen-
+data bottleneck and to determine if the tal interactions as well as model future
+performance of such a model is appli- changes in land use change [2, 6, 7].
+cable to the creation of deep learning However, development of high-quality
+techniques for the segmentation of land large-scale land cover maps is labor-
+cover maps. By using a STEGO frame- intensive and computationally expen-
+work to distill correspondence similari- sive, and as such resolution is typically
+ties from a pre-trained model, our aim constrained: USGS NLCD 2019 maps
+is to utilize existing models to deter- land usage at a resolution of 30m. Due
+mine the semantic information while to rapid developments in remote sens-
+evaluating feature correspondences in ing, the availability of very high resolu-
+VHR satellite imagery to create de- tion imagery and satellite data is now
+tailed LULC maps. abundant, yet research on scaling al-
+
+gorithms used for labeling coarser data
+is still in its relative infancy [8]. With
+
+2 Related Work the emergence of recent self-supervised
+algorithms that possess the ability to
+
+2.1 Land Use/Land Cover learn semantically rich features with-
+
+Change Maps out the need for high-quality anno-
+tations, further research is needed to
+
+Land use/land cover change (LU/LC) evaluate their potential for labeling
+maps detail natural resource usage LULC maps at high resolution [9, 10].
+
+Figure 1: Example of large-scale LULC map of central and southern Florida,
+USA. LULC maps such as these are critical in evaluating and modeling human
+utilization of land and resources [1].
+
+2
+
+
+
+2.2 Semantic Segmentation gion of investigation of the desired res-
+olution, which is not always feasible
+
+Hamilton et al. define semantic seg- [13, 14].
+mentation as “Semantic segmentation
+is the process of classifying each indi- 2.3 Convoluional Neural
+vidual pixel of an image into a known Networks
+ontology” [11]. Semantic segmentation
+is useful when all objects or features in CNNs primarily consist of convolu-
+an image and their location(s) within tional layers, pooling layers, and fully
+the image is necessary information. connected layers arranged in such a
+To date, most deep-learning semantic hierarchy to allow a representation of
+segmentation algorithms employ the low-level features (edges, lines, cor-
+use of convolutional neural networks ners) to be used to learn more com-
+(CNNs) in some fashion; CNNs are plex high-level features (faces, objects,
+a special class of deep learning mod- etc.) [12]. CNNs are widely popu-
+els powered predominantly by stacked lar in most computer vision applica-
+convolutional layers that enable neural tions, with tasks ranging from image
+networks the ability to better capture classification to optical flow, and as
+low-level, mid-level, and high-level spa- such are commonly used in the pro-
+tial features [12, 10]. In remote sens- cessing of spatial remote sensing data
+ing, research on the use deep learn- [15]. For semantic segmentation specif-
+ing architectures to label land use and ically, DeepLabv3+ (see figure 2) is one
+land change has emerged, but most im- of the most popular frameworks for vi-
+plementations rely on access to hand- sion tasks that use supervised learning
+labeled annotations specific to the re- [16, 17].
+
+3
+
+
+
+Figure 2: Simplified graph of DeepLabv3+ architecture. Note the extensive use
+of convolutional layers arranged in a hierarchy. Supervised architectures such
+as these perform well in scenarios where masked training data is of high-quality
+and abundant [17, 16].
+
+2.4 Contrastive Learning imize agreement between positive pairs
+and minimize agreement between neg-
+ative pairs. Specifically, when classes
+
+Contrastive learning is a framework
+are unknown, other augmented images
+
+for self-supervised learning that oper-
+in a given batch that are not derived
+
+ates on the principle that representa-
+from the original “anchor” image are
+
+tions of samples from similar classes
+treated as negative pairs. [18, 9].
+
+should be similar, whereas representa-
+tions of samples from disparate classes
+should be dissimilar. Many common
+contrastive learning algorithms enforce
+this principle with the use of data aug-
+mentation: a pair of subsamples is cre-
+ated by taking a single image as in-
+put (referred to as an ”anchor”) before
+randomly cropping, stretching, or re-
+sizing the image in such a way to cre-
+ate two dissimilar images that belong
+to the same class - otherwise known
+as a positive pair. Negative pairs con-
+sisting of two augmented images from
+different classes are also used in train-
+ing with one exception; their represen-
+tations should be dissimilar. A con-
+trastive loss function attempts to max-
+
+4
+
+
+
+Vision Transformer (ViT) is a fam-
+ily of self-attention-based architecture
+that divides an image into a se-
+ries of patches that are then placed
+into a multi-head self attention block.
+Patches are flatted into a linear pro-
+jection before input into a large model
+consisting of several stacked Trans-
+former encoders - each consisting of
+global self-attention layers. Self-
+
+Figure 3: Graphical depiction of Sim-
+attention layers are then fed into multi-
+
+CLR - a popular contrastive learning
+layer perceptrons (MLP) at the final
+
+framework. An input X is augmented
+stage of an encoding layer. Residual
+
+into a positive pair. Loss is computed
+connections concatenate the input of
+
+over the representations received from
+the encoder to the output of the multi-
+
+a multilayer perceptron (MLP) such to
+head self attention block, and the out-
+
+minimize the differences between the
+put of said self attention blocks to the
+
+two representations during training [9].
+final output of the layer. Positional
+encodings are also inputted alongside
+
+2.5 Transformers in Com- each linearly embedded patch, but
+
+puter Vision these encodings do not convey informa-
+tion regarding the position of each em-
+
+Self-attention is an important compo- bedded patch before training - mean-
+nent of state-of-the art models built ing spatial information and relation-
+for natural language processing (NLP). ships must be learned from scratch
+Implementing self-attention into com- (as opposed to CNNs). Regardless,
+puter vision models has the poten- the performance of ViTs is competitve
+tial to allow deep learning models to with or exceeds that of state-of-the-art
+learn features in an image in a global CNN methods for classification when
+fashion rather than local representa- trained on several benchmark datasets
+tions confined to the receptive fields of while being considerably more compu-
+convolutional layers. The most pop- tationally efficient in terms of resource
+ular vision-based adaptations of these use during pre-training. However Big
+methods draw from Transformer-based Transformer (BiT) - a family of similar
+models commonly applied in NLP do- architecture that utilizes large CNNs
+mains such as BERT and GPT-3 with during pre-training - yielded compara-
+the goal of overcoming such limita- tively better results when the number
+tions on learning long-range interac- of pre-training samples was reduced
+tions [19, 20, 10, 21, 18]. [21].
+
+5
+
+
+
+Figure 4: Graphical overview of basic ViT architecture. Note the multi-head
+self attention layer included in each transformer encoder layer [21].
+
+2.6 DINO notation stems from its use of knowl-
+edge distillation to train a new model
+
+Whilst ViTs have shown to be of simi- against an ensemble of previous models
+lar or higher performance compared to using augmented pairs from the same
+state-of-the-art CNNs, their large size sample [22, 10].
+and need for huge amounts of labeled
+pre-training data make them relatively
+impractical for implementations in sit-
+uations where computational resources
+and data availability are constraints.
+Caron et al. showed that a self-
+supervised approach to pre-training
+using contrastive learning showed con-
+siderably better performance on down-
+stream segmentation tasks compared
+to models pre-trained in a fully su-
+pervised procedure. This approach,
+named DINO (Distilling knowledge
+with no labels) was able to learn fea-
+tures that were richer and more seman-
+tically meaningful compared to those
+learned by ViTs trained in a fully su-
+pervised fashion - making it suitable
+for usage in various vision tasks beyond
+classification. DINO’s ability to learn
+rich features from samples without an-
+
+6
+
+
+
+in a self-supervised fashion during pre-
+training, correlations between learned
+features are consistent with seman-
+tic information found not only within
+the same image but across other im-
+ages as well [10]. STEGO is an ar-
+chitecture recently introduced to per-
+form unsupervised semantic segmen-
+tation by distilling feature correspon-
+dences (retrieved from a frozen pre-
+trained DINO ViT backbone) across
+and between samples into a lower di-
+mensional representation using a sim-
+ple MLP. It requires no fine-tuning due
+to DINO’s ability to capture rich fea-
+
+Figure 5: Graphical overview of DINO tures in pre-training - the outputs of
+training. Note how the training the frozen DINO backbone are fed to
+step utilizes a contrastive learning ap- a single segmentation head consisting
+proach. Knowledge distillation is used of a simple MLP. By utilizing a basic
+to train a teacher and student model, but creative contrastive learning im-
+here student model gθs (ViT backbone plementation where a contrastive loss
+at current epoch) is trained to match function takes into account the feature
+the output of teacher model g correspondences in a pair of samples,
+
+θs (en-
+semble of ViT backbones at all previ- this method has yielded breakthrough
+ous epoch). Using such a knowledge results on unsupervised semantic seg-
+distillation during training was shown mentation tasks. Further, the archi-
+to yield consistent high-quality targets tecture is highly adaptable to various
+from the teacher model [10]. scenarios and domains as the archi-
+
+tecture itself does not define a strict
+method for pre-training, thus any fu-
+
+2.7 STEGO ture advancements in vision models or
+One key observation from DINO is pre-training paradigms can be easily
+that once features have been captured patched in [11].
+
+7
+
+
+
+Figure 6: Graphical overview of STEGO model. Note the [11].
+
+3 Materials &Method- which is in accordance with the aim
+
+ology of this project. Land cover classifi-
+cation is important for tasks such as:
+sustainable development, autonomous
+
+3.1 Datasets
+agriculture, and urban planning. The
+
+For this research, two datasets con- Land Cover Classification task is split
+sisting of VHR satellite imagery and into seven classes: urban, agriculture,
+their corresponding masks were used rangeland, forest, water, barren, and
+in various capacities in training and unknown. This is defined as a multi-
+evaluation. Whilst pre-training was class segmentation task.
+done using DINO with data from Im- The DeepGlobe Land Cover Clas-
+ageNet, parameters in the backbone sification consists of 1,146 images at
+ViT were transferred to the down- a spatial resolution of 50 centimeters
+stream STEGO model for fine-tuning. per pixel. Inputs were resized to
+Ideally, a sufficiently large dataset of 256x256x3 with a resultant spatial res-
+VHR imagery would be used to pre- olution of 5 meters per pixel [23].
+train DINO whereas a smaller dataset
+would then be used to fine-tube. To
+the authors’ knowledge, no such pub-
+licly accessible dataset exists at this
+point in time.
+
+3.1.1 DeepGlobe
+
+The DeepGlobe dataset is a high-
+resolution satellite image dataset that
+consists of three challenge tracks: road
+extraction, Building Detection, and Figure 7: Selected images and masks
+Land Cover Classification. We utilized from DeepGlobe Land Cover Chal-
+the Land Cover Classification track, lenge Dataset [23].
+
+8
+
+
+
+3.1.2 LandCover.ai
+
+Similar to the DeepGlobe dataset
+(Land Cover Classification task), the
+LandCover.ai dataset is an RGB Figure 8: Selected images and masks
+manually-annotated image dataset from LandCover.ai dataset [24].
+based on satellite images for land cover
+classification. The images from this
+dataset come from Central Europe
+with most images coming from Poland.
+The landscape of Poland is primarily 3.2 Model Configuration
+dominated by mixed forests and agrar-
+ian areas. This dataset is divided into
+
+In order to achieve best results, we
+four different classes: buildings, wood-
+
+opted to utilize various vision trans-
+lands, water, and road for land cover
+
+formers that were pre-trained by the
+generality and usefulness for public ad-
+
+DINO paradigm. It is important to
+ministrations. However, we discarded
+
+note that the vision transformers were
+the need for labels from this dataset
+
+pre-trained on the ImageNet dataset.
+as we only used the source images to
+
+This dataset includes 14+ million im-
+train the STEGO model.
+
+ages. This allows the vision trans-
+former to see a diverse array of pre-
+training data and allows the potential
+
+In the Land Cover Classification for higher segmentation accuracy com-
+
+track, the labels are only publicly avail- pared to models pre-trained on smaller
+
+able for the train splits. We decided datasets [10]. In order to train the
+
+to combine the validation and test STEGO segmentation decoder, we uti-
+
+source images, along with images from lized a set batch size of 16, learning
+
+the LandCover.ai dataset, to create a rate of 0.0001, an Adam optimizer, and
+
+pseudo-train dataset. This allows us to momentum constraints preset by the
+
+obtain accuracy values from the Deep- STEGO authors. It is also important
+
+Globe train set. to note that the learning rate is scal-
+able, as the STEGO architecture al-
+lows for such a mechanism [11]. We
+set training and inference images to a
+
+The LandCover dataset consists of set size of 256 x 256 to allow for the
+10,604 images with spatial resolutions model to train efficiently while relax-
+ranging from 50 centimeters per pixel ing memory constraints and also pre-
+to 25 centimeters per pixel. After resiz- vent the loss of valuable global infor-
+ing to 256x256x3, the resultant spatial mation. We limit the model to train
+resolution ranged from 50-100 centime- on 200 images with around 10 epochs
+ters per pixel [24]. to train due to compute oonstraints.
+
+9
+
+
+
+4 Results parameters (see figure 9). We believe
+that with training data and better op-
+
+Given the limited number of epochs timized hyperparameters, a modified
+and small training dataset, the results STEGO model can achieve state-of-
+are greater than expected. However, the-art performance while simply uti-
+we expect the quality of the features lizing a pre-trained model from DINO.
+from the vision transformer and the It is important to note that this result
+possibility of the model reaching an op- was achieved without a domain focused
+tima quickly to be the reasoning be- pre-trained dataset. We can expect
+hind this. In most, if not all, of the the model to perform better using the
+inference images, STEGO performs weights from a DINO backbone pre-
+well in identifying segmentation areas, trained with a sufficiently large dataset
+but does seem to over-represent some of consistent high-resolution satellite
+classes, resulting in a class imbalance. imagery - such a dataset is not pub-
+We were able to observe the model lically available to the authors’ knowl-
+achieving a 52% accuracy across 5 test edge.
+samples with the given model hyper-
+
+Figure 9: Images segmented using proposed model. Images on the top were
+segmented using the STEGO model after fine-tuning, masks on the bottom were
+the resultant masks from the segmentation component of the model. Despite
+only 10 epochs of fine-tuning and no ground truth labels to rely on, the model
+was still able to discern differences in spatial features to yield a fairly accurate
+map of land cover.
+
+5 Discussion minimal training images. Considering
+that accuracy results over 70% are typ-
+
+We found that utilizing a pre-trained ically considered acceptable for mod-
+DINO vision transformer as a back- els that utilize fully supervised training
+bone for the STEGO decoder can yield in the remote sensing research domain
+decent results in semantic segmenta- [25, 26, 27], these results are promis-
+tion. We were able to obtain 52% ing. We believe that scaling up the
+accuracy with a small batch size and datasets used in both training phases
+
+10
+
+
+
+will not only yield better results but porating real world data could have the
+will also improve the model’s robust- effect of needing less training data to
+ness. Although STEGO is proven to build models, thus saving time and re-
+be a good option for semantic segmen- sources training models.
+tation, there exist potential improve-
+ments to the architecture and method-
+ology. One such potential modification 6 Conclusion
+would be to incorporate the MASK
+DINO framework into the STEGO ar- Land cover classification is still an im-
+chitecture to take advantage of po- portant problem to date, and is an im-
+tentially richer learned semantic fea- portant task in the field of computer
+tures [28]. Another potential inves- science for agricultural and commer-
+tigation would be the performance cial reasons [23, 31]. In this study,
+of the MoBY architecture with the we have shown that the combination
+improved SwinV2 Vision Transformer of DINO and STEGO has the poten-
+variant on VHR satellite imagery seg- tial to be a feasible alternative to su-
+mentation tasks due to SwinV2’s abil- pervised learning models. Contrastive
+ity to handle high-resolution samples learning is relatively new in the area
+[29, 30]. In addition to LULC segmen- of computer vision but has the abil-
+tation, there are various similar do- ity to generate robust models that can
+mains where such work can be applied be applied to various computer vision
+to. Large scale terrain segmentation tasks: such models can provide many
+is an important area of study in rela- benefits, and we believe that smaller
+tion to land cover classification. An models trained with contrastive learn-
+accurate model for terrain segmenta- ing can achieve performance compete-
+tion can easily assist tasks in robotics tive with supervised learning methods.
+such as exploration. This provides Self-supervised learning offers a good
+a reason to scale up from aerial im- alternative for supervised training on
+ages to land masses and remains a unreliable training datasets [29, 18],
+widely researched topic in computer and we have shown that self supervi-
+vision. Another area of investigation sion can do an acceptable job at dis-
+that stems from this project is the con- tinguishing different land cover classes
+cept of using real world data and obser- in VHR aerial images. As such, fur-
+vations to fix model inaccuracies dur- ther research could potentially reveal
+ing a robotics task such as exploration solutions to problems in earth science,
+or path planning. Successfully incor- climatology, and agriculture.
+
+7 References
+
+References
+
+[1] R. A. Pielke, “Land Use and Climate Change,” Science, vol. 310, no. 5754,
+pp. 1625–1626, Dec. 2005.
+
+11
+
+
+
+[2] J. J. Feddema, K. W. Oleson, G. B. Bonan, L. O. Mearns, L. E. Buja, G. A.
+Meehl, and W. M. Washington, “The Importance of Land-Cover Change
+in Simulating Future Climates,” Science, vol. 310, no. 5754, pp. 1674–1678,
+Dec. 2005.
+
+[3] D. P. Roy, H. Huang, R. Houborg, and V. S. Martins, “A global analysis
+of the temporal availability of PlanetScope high spatial resolution multi-
+spectral imagery,” Remote Sensing of Environment, vol. 264, p. 112586,
+Oct. 2021.
+
+[4] M. A. Wulder, N. C. Coops, D. P. Roy, J. C. White, and T. Hermosilla,
+“Land cover 2.0,” International Journal of Remote Sensing, vol. 39, no. 12,
+pp. 4254–4284, Jun. 2018.
+
+[5] S. N. MohanRajan, A. Loganathan, and P. Manoharan, “Survey on Land
+Use/Land Cover (LU/LC) change analysis in remote sensing and GIS en-
+vironment: Techniques and Challenges,” Environmental Science and Pol-
+lution Research, vol. 27, no. 24, pp. 29 900–29 926, Aug. 2020.
+
+[6] G. Zeleke and H. Hurni, “Implications of Land Use and Land Cover Dy-
+namics for Mountain Resource Degradation in the Northwestern Ethiopian
+Highlands,” Mountain Research and Development, vol. 21, no. 2, pp. 184–
+191, May 2001.
+
+[7] R. A. Pielke, A. Pitman, D. Niyogi, R. Mahmood, C. McAlpine, F. Hossain,
+K. K. Goldewijk, U. Nair, R. Betts, S. Fall, M. Reichstein, P. Kabat, and
+N. de Noblet, “Land use/land cover changes and climate: Modeling analysis
+and observational evidence,” WIREs Climate Change, vol. 2, no. 6, pp.
+828–850, Nov. 2011.
+
+[8] C. Homer, J. Dewitz, S. Jin, G. Xian, C. Costello, P. Danielson, L. Gass,
+M. Funk, J. Wickham, S. Stehman, R. Auch, and K. Riitters, “Contermi-
+nous United States land cover change patterns 2001–2016 from the 2016
+National Land Cover Database,” ISPRS Journal of Photogrammetry and
+Remote Sensing, vol. 162, pp. 184–199, Apr. 2020.
+
+[9] T. Chen, S. Kornblith, M. Norouzi, and G. Hinton, “A Simple Framework
+for Contrastive Learning of Visual Representations,” Jun. 2020.
+
+[10] M. Caron, H. Touvron, I. Misra, H. Jégou, J. Mairal, P. Bojanowski, and
+A. Joulin, “Emerging Properties in Self-Supervised Vision Transformers,”
+May 2021.
+
+[11] M. Hamilton, Z. Zhang, B. Hariharan, N. Snavely, and W. T. Free-
+man, “Unsupervised semantic segmentation by distilling feature correspon-
+dences,” 2022.
+
+[12] K. He, X. Zhang, S. Ren, and J. Sun, “Deep Residual Learning for Image
+Recognition,” Dec. 2015.
+
+12
+
+
+
+[13] K.-A. Nguyen and Y.-A. Liou, “Mapping global eco-environment vulnera-
+bility due to human and nature disturbances,” MethodsX, vol. 6, pp. 862–
+875, 2019.
+
+[14] V. Martins, D. Roy, H. Huang, L. Boschetti, H. Zhang, and L. Yan, “Deep
+learning high resolution burned area mapping by transfer learning from
+Landsat-8 to PlanetScope,” Remote Sensing of Environment, vol. 280, p.
+113203, Oct. 2022.
+
+[15] V. S. Martins, A. L. Kaleita, B. K. Gelder, H. L. da Silveira, and C. A. Abe,
+“Exploring multiscale object-based convolutional neural network (multi-
+OCNN) for remote sensing image classification at high spatial resolution,”
+ISPRS Journal of Photogrammetry and Remote Sensing, vol. 168, pp. 56–
+73, Oct. 2020.
+
+[16] L.-C. Chen, G. Papandreou, F. Schroff, and H. Adam, “Rethinking Atrous
+Convolution for Semantic Image Segmentation,” Dec. 2017.
+
+[17] L.-C. Chen, Y. Zhu, G. Papandreou, F. Schroff, and H. Adam, “Encoder-
+Decoder with Atrous Separable Convolution for Semantic Image Segmen-
+tation,” Aug. 2018.
+
+[18] A. Jaiswal, A. R. Babu, M. Z. Zadeh, D. Banerjee, and F. Makedon, “A
+Survey on Contrastive Self-supervised Learning,” Feb. 2021.
+
+[19] Z. Fu, “Vision Transformer: Vit and its Derivatives,” May 2022.
+
+[20] Z. Liu, Y. Lin, Y. Cao, H. Hu, Y. Wei, Z. Zhang, S. Lin, and B. Guo,
+“Swin Transformer: Hierarchical Vision Transformer using Shifted Win-
+dows,” Aug. 2021.
+
+[21] A. Dosovitskiy, L. Beyer, A. Kolesnikov, D. Weissenborn, X. Zhai, T. Un-
+terthiner, M. Dehghani, M. Minderer, G. Heigold, S. Gelly, J. Uszkoreit,
+and N. Houlsby, “An Image is Worth 16x16 Words: Transformers for Image
+Recognition at Scale,” Jun. 2021.
+
+[22] G. Hinton, O. Vinyals, and J. Dean, “Distilling the knowledge in a neural
+network,” 2015.
+
+[23] I. Demir, K. Koperski, D. Lindenbaum, G. Pang, J. Huang, S. Basu,
+F. Hughes, D. Tuia, and R. Raskar, “DeepGlobe 2018: A Challenge to
+Parse the Earth through Satellite Images,” in 2018 IEEE/CVF Conference
+on Computer Vision and Pattern Recognition Workshops (CVPRW), Jun.
+2018, pp. 172–17 209.
+
+[24] A. Boguszewski, D. Batorski, N. Ziemba-Jankowska, T. Dziedzic, and
+A. Zambrzycka, “LandCover.ai: Dataset for Automatic Mapping of Build-
+ings, Woodlands, Water and Roads from Aerial Imagery,” Apr. 2022.
+
+13
+
+
+
+[25] B. Chen, M. Xia, and J. Huang, “MFANet: A Multi-Level Feature Aggrega-
+tion Network for Semantic Segmentation of Land Cover,” Remote Sensing,
+vol. 13, no. 4, p. 731, Feb. 2021.
+
+[26] K. Karra, C. Kontgis, Z. Statman-Weil, J. C. Mazzariello, M. Mathis, and
+S. P. Brumby, “Global land use / land cover with Sentinel 2 and deep learn-
+ing,” in 2021 IEEE International Geoscience and Remote Sensing Sympo-
+sium IGARSS. Brussels, Belgium: IEEE, Jul. 2021, pp. 4704–4707.
+
+[27] M. B. A. Gibril, M. O. Idrees, K. Yao, and H. Z. M. Shafri, “Integrative
+image segmentation optimization and machine learning approach for high
+quality land-use and land-cover mapping using multisource remote sensing
+data,” Journal of Applied Remote Sensing, vol. 12, no. 01, p. 1, Mar. 2018.
+
+[28] F. Li, H. Zhang, H. xu, S. Liu, L. Zhang, L. M. Ni, and H.-Y. Shum,
+“Mask DINO: Towards A Unified Transformer-based Framework for Object
+Detection and Segmentation,” Nov. 2022.
+
+[29] Z. Xie, Y. Lin, Z. Yao, Z. Zhang, Q. Dai, Y. Cao, and H. Hu, “Self-
+Supervised Learning with Swin Transformers,” May 2021.
+
+[30] Z. Liu, H. Hu, Y. Lin, Z. Yao, Z. Xie, Y. Wei, J. Ning, Y. Cao, Z. Zhang,
+L. Dong, F. Wei, and B. Guo, “Swin Transformer V2: Scaling Up Capacity
+and Resolution,” Apr. 2022.
+
+[31] C. Giri, B. Pengra, J. Long, and T. Loveland, “Next generation of global
+land cover characterization, mapping, and monitoring,” International Jour-
+nal of Applied Earth Observation and Geoinformation, vol. 25, pp. 30–37,
+Dec. 2013.
+
+14

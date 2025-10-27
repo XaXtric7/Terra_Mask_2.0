@@ -1,0 +1,20 @@
+[2025-09-19 10:14:10] - Land Cover Semantic Segmentation Train Logs - {train.py:89} - INFO - Divided images into patches successfully!
+[2025-09-19 10:19:31] - Land Cover Semantic Segmentation Train Logs - {train.py:98} - INFO - Divided masks into patches successfully!
+[2025-09-19 10:24:14] - Land Cover Semantic Segmentation Train Logs - {train.py:107} - INFO - Discarded unused patches successfully!
+[2025-09-19 10:26:28] - Land Cover Semantic Segmentation Train Logs - {train.py:121} - INFO - Training and validation data split successfully!
+[2025-09-19 10:26:28] - Land Cover Semantic Segmentation Train Logs - {train.py:144} - INFO - Built the model successfully!
+[2025-09-19 10:26:28] - Land Cover Semantic Segmentation Train Logs - {train.py:168} - INFO - Initialized training and validation datasets and dataloaders!
+[2025-09-19 10:26:28] - Land Cover Semantic Segmentation Train Logs - {train.py:179} - INFO - Initialized the loss and evaluation metrics!
+[2025-09-19 10:26:28] - Land Cover Semantic Segmentation Train Logs - {train.py:199} - INFO - Initialized the optimizer!
+[2025-09-19 10:26:28] - Land Cover Semantic Segmentation Train Logs - {train.py:223} - INFO - Initialized epoch runners!
+[2025-09-19 10:26:46] - Land Cover Semantic Segmentation Train Logs - {train.py:247} - ERROR - Failed to train the model!
+[2025-09-19 10:33:30] - Land Cover Semantic Segmentation Train Logs - {train.py:89} - INFO - Divided images into patches successfully!
+[2025-09-19 10:35:27] - Land Cover Semantic Segmentation Train Logs - {train.py:98} - INFO - Divided masks into patches successfully!
+[2025-09-19 10:41:00] - Land Cover Semantic Segmentation Train Logs - {train.py:107} - INFO - Discarded unused patches successfully!
+[2025-09-19 10:44:39] - Land Cover Semantic Segmentation Train Logs - {train.py:121} - INFO - Training and validation data split successfully!
+[2025-09-19 10:44:40] - Land Cover Semantic Segmentation Train Logs - {train.py:144} - INFO - Built the model successfully!
+[2025-09-19 10:44:40] - Land Cover Semantic Segmentation Train Logs - {train.py:168} - INFO - Initialized training and validation datasets and dataloaders!
+[2025-09-19 10:44:40] - Land Cover Semantic Segmentation Train Logs - {train.py:179} - INFO - Initialized the loss and evaluation metrics!
+[2025-09-19 10:44:40] - Land Cover Semantic Segmentation Train Logs - {train.py:199} - INFO - Initialized the optimizer!
+[2025-09-19 10:44:41] - Land Cover Semantic Segmentation Train Logs - {train.py:223} - INFO - Initialized epoch runners!
+[2025-09-19 14:41:09] - Land Cover Semantic Segmentation Train Logs - {train.py:245} - INFO - Model training finished!

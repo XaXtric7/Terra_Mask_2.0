@@ -1,0 +1,43 @@
+[2025-10-22 21:03:03] - Model Comparison Logs - {compare_models.py:208} - INFO - Starting model comparison...
+[2025-10-22 21:03:05] - Model Comparison Logs - {compare_models.py:86} - INFO - U-Net model loaded successfully
+[2025-10-22 21:03:06] - Model Comparison Logs - {compare_models.py:98} - ERROR - Error loading models: Error(s) in loading state_dict for SimpleSTEGOHead:
+	size mismatch for conv3.weight: copying a param with shape torch.Size([4, 512, 1, 1]) from checkpoint, the shape in current model is torch.Size([3, 512, 1, 1]).
+	size mismatch for conv3.bias: copying a param with shape torch.Size([4]) from checkpoint, the shape in current model is torch.Size([3]).
+[2025-10-22 21:08:26] - Model Comparison Logs - {compare_models.py:231} - INFO - Starting model comparison...
+[2025-10-22 21:08:27] - Model Comparison Logs - {compare_models.py:87} - INFO - U-Net model loaded successfully
+[2025-10-22 21:08:28] - Model Comparison Logs - {compare_models.py:94} - INFO - STEGO model loaded successfully
+[2025-10-22 21:08:28] - Model Comparison Logs - {compare_models.py:238} - INFO - Found 2 test images
+[2025-10-22 21:08:28] - Model Comparison Logs - {compare_models.py:246} - INFO - Processing N-33-60-D-c-4-2.tif
+[2025-10-22 21:10:21] - Model Comparison Logs - {compare_models.py:246} - INFO - Processing N-34-97-D-c-2-4.tif
+[2025-10-22 21:12:27] - Model Comparison Logs - {compare_models.py:330} - INFO - Generating comparison report...
+[2025-10-22 21:13:55] - Model Comparison Logs - {compare_models.py:241} - INFO - Starting model comparison...
+[2025-10-22 21:13:57] - Model Comparison Logs - {compare_models.py:87} - INFO - U-Net model loaded successfully
+[2025-10-22 21:13:58] - Model Comparison Logs - {compare_models.py:94} - INFO - STEGO model loaded successfully
+[2025-10-22 21:13:58] - Model Comparison Logs - {compare_models.py:248} - INFO - Found 2 test images
+[2025-10-22 21:13:58] - Model Comparison Logs - {compare_models.py:256} - INFO - Processing N-33-60-D-c-4-2.tif
+[2025-10-22 21:16:07] - Model Comparison Logs - {compare_models.py:256} - INFO - Processing N-34-97-D-c-2-4.tif
+[2025-10-22 21:18:16] - Model Comparison Logs - {compare_models.py:343} - INFO - Generating comparison report...
+[2025-10-22 21:21:25] - Model Comparison Logs - {compare_models.py:250} - INFO - Starting model comparison...
+[2025-10-22 21:21:27] - Model Comparison Logs - {compare_models.py:87} - INFO - U-Net model loaded successfully
+[2025-10-22 21:21:28] - Model Comparison Logs - {compare_models.py:94} - INFO - STEGO model loaded successfully
+[2025-10-22 21:21:28] - Model Comparison Logs - {compare_models.py:257} - INFO - Found 2 test images
+[2025-10-22 21:21:28] - Model Comparison Logs - {compare_models.py:265} - INFO - Processing N-33-60-D-c-4-2.tif
+[2025-10-22 21:23:37] - Model Comparison Logs - {compare_models.py:265} - INFO - Processing N-34-97-D-c-2-4.tif
+[2025-10-22 21:25:49] - Model Comparison Logs - {compare_models.py:353} - INFO - Generating comparison report...
+[2025-10-22 21:25:51] - Model Comparison Logs - {compare_models.py:307} - INFO - Model comparison completed!
+[2025-10-22 21:38:14] - Model Comparison Logs - {compare_models.py:317} - INFO - Starting model comparison...
+[2025-10-22 21:38:16] - Model Comparison Logs - {compare_models.py:87} - INFO - U-Net model loaded successfully
+[2025-10-22 21:38:16] - Model Comparison Logs - {compare_models.py:94} - INFO - STEGO model loaded successfully
+[2025-10-22 21:38:16] - Model Comparison Logs - {compare_models.py:324} - INFO - Found 2 test images
+[2025-10-22 21:38:16] - Model Comparison Logs - {compare_models.py:332} - INFO - Processing N-33-60-D-c-4-2.tif
+[2025-10-22 21:39:28] - Model Comparison Logs - {compare_models.py:332} - INFO - Processing N-34-97-D-c-2-4.tif
+[2025-10-22 21:40:44] - Model Comparison Logs - {compare_models.py:425} - INFO - Generating comparison report...
+[2025-10-22 21:40:45] - Model Comparison Logs - {compare_models.py:379} - INFO - Model comparison completed!
+[2025-10-22 21:50:21] - Model Comparison Logs - {compare_models.py:322} - INFO - Starting model comparison...
+[2025-10-22 21:50:22] - Model Comparison Logs - {compare_models.py:87} - INFO - U-Net model loaded successfully
+[2025-10-22 21:50:23] - Model Comparison Logs - {compare_models.py:94} - INFO - STEGO model loaded successfully
+[2025-10-22 21:50:23] - Model Comparison Logs - {compare_models.py:329} - INFO - Found 2 test images
+[2025-10-22 21:50:23] - Model Comparison Logs - {compare_models.py:337} - INFO - Processing N-33-60-D-c-4-2.tif
+[2025-10-22 21:51:34] - Model Comparison Logs - {compare_models.py:337} - INFO - Processing N-34-97-D-c-2-4.tif
+[2025-10-22 21:52:45] - Model Comparison Logs - {compare_models.py:430} - INFO - Generating comparison report...
+[2025-10-22 21:52:46] - Model Comparison Logs - {compare_models.py:384} - INFO - Model comparison completed!

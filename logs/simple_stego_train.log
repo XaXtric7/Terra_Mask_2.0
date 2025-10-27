@@ -1,0 +1,56 @@
+[2025-10-22 17:18:55] - Simple STEGO Training Logs - {train_simple_stego.py:120} - INFO - Creating image patches...
+[2025-10-22 17:22:54] - Simple STEGO Training Logs - {train_simple_stego.py:124} - INFO - Creating mask patches...
+[2025-10-22 17:25:39] - Simple STEGO Training Logs - {train_simple_stego.py:139} - INFO - Creating simplified STEGO model...
+[2025-10-22 17:25:40] - Simple STEGO Training Logs - {train_simple_stego.py:150} - INFO - Starting simplified STEGO training...
+[2025-10-22 17:25:40] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 1/20
+[2025-10-22 17:31:21] - Simple STEGO Training Logs - {train_simple_stego.py:139} - INFO - Creating simplified STEGO model...
+[2025-10-22 17:31:22] - Simple STEGO Training Logs - {train_simple_stego.py:150} - INFO - Starting simplified STEGO training...
+[2025-10-22 17:31:22] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 1/20
+[2025-10-22 17:37:56] - Simple STEGO Training Logs - {train_simple_stego.py:139} - INFO - Creating simplified STEGO model...
+[2025-10-22 17:37:57] - Simple STEGO Training Logs - {train_simple_stego.py:150} - INFO - Starting simplified STEGO training...
+[2025-10-22 17:37:57] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 1/20
+[2025-10-22 17:45:28] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 1 - Loss: 0.0007, Accuracy: 0.9998
+[2025-10-22 17:45:28] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 2/20
+[2025-10-22 17:52:40] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 2 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 17:52:40] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 3/20
+[2025-10-22 17:59:49] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 3 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 17:59:49] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 4/20
+[2025-10-22 18:07:01] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 4 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 18:07:01] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 5/20
+[2025-10-22 18:14:06] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 5 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 18:14:06] - Simple STEGO Training Logs - {train_simple_stego.py:177} - INFO - Model saved at epoch 5
+[2025-10-22 18:14:06] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 6/20
+[2025-10-22 18:23:31] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 6 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 18:23:31] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 7/20
+[2025-10-22 18:32:09] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 7 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 18:32:09] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 8/20
+[2025-10-22 18:39:42] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 8 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 18:39:42] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 9/20
+[2025-10-22 18:47:15] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 9 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 18:47:15] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 10/20
+[2025-10-22 18:55:26] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 10 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 18:55:27] - Simple STEGO Training Logs - {train_simple_stego.py:177} - INFO - Model saved at epoch 10
+[2025-10-22 18:55:27] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 11/20
+[2025-10-22 19:02:39] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 11 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 19:02:39] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 12/20
+[2025-10-22 19:38:33] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 12 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 19:38:33] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 13/20
+[2025-10-22 19:46:28] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 13 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 19:46:28] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 14/20
+[2025-10-22 19:54:41] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 14 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 19:54:41] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 15/20
+[2025-10-22 20:03:01] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 15 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 20:03:01] - Simple STEGO Training Logs - {train_simple_stego.py:177} - INFO - Model saved at epoch 15
+[2025-10-22 20:03:01] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 16/20
+[2025-10-22 20:11:10] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 16 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 20:11:10] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 17/20
+[2025-10-22 20:18:57] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 17 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 20:18:57] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 18/20
+[2025-10-22 20:26:48] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 18 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 20:26:48] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 19/20
+[2025-10-22 20:35:06] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 19 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 20:35:06] - Simple STEGO Training Logs - {train_simple_stego.py:155} - INFO - Epoch 20/20
+[2025-10-22 20:43:12] - Simple STEGO Training Logs - {train_simple_stego.py:162} - INFO - Epoch 20 - Loss: 0.0000, Accuracy: 1.0000
+[2025-10-22 20:43:12] - Simple STEGO Training Logs - {train_simple_stego.py:177} - INFO - Model saved at epoch 20
+[2025-10-22 20:43:12] - Simple STEGO Training Logs - {train_simple_stego.py:191} - INFO - Final model saved
+[2025-10-22 20:43:13] - Simple STEGO Training Logs - {train_simple_stego.py:212} - INFO - Simplified STEGO training completed successfully!
