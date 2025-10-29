@@ -41,3 +41,19 @@
 [2025-10-22 21:51:34] - Model Comparison Logs - {compare_models.py:337} - INFO - Processing N-34-97-D-c-2-4.tif
 [2025-10-22 21:52:45] - Model Comparison Logs - {compare_models.py:430} - INFO - Generating comparison report...
 [2025-10-22 21:52:46] - Model Comparison Logs - {compare_models.py:384} - INFO - Model comparison completed!
+[2025-10-28 22:30:08] - Model Comparison Logs - {compare_models.py:322} - INFO - Starting model comparison...
+[2025-10-28 22:30:09] - Model Comparison Logs - {compare_models.py:87} - INFO - U-Net model loaded successfully
+[2025-10-28 22:30:10] - Model Comparison Logs - {compare_models.py:94} - INFO - STEGO model loaded successfully
+[2025-10-28 22:30:10] - Model Comparison Logs - {compare_models.py:329} - INFO - Found 2 test images
+[2025-10-28 22:30:10] - Model Comparison Logs - {compare_models.py:337} - INFO - Processing N-33-60-D-c-4-2.tif
+[2025-10-28 22:31:21] - Model Comparison Logs - {compare_models.py:337} - INFO - Processing N-34-97-D-c-2-4.tif
+[2025-10-28 22:32:43] - Model Comparison Logs - {compare_models.py:430} - INFO - Generating comparison report...
+[2025-10-28 22:32:44] - Model Comparison Logs - {compare_models.py:384} - INFO - Model comparison completed!
+[2025-10-28 22:43:48] - Model Comparison Logs - {compare_models.py:323} - INFO - Starting model comparison...
+[2025-10-28 22:43:50] - Model Comparison Logs - {compare_models.py:88} - INFO - U-Net model loaded successfully
+[2025-10-28 22:43:50] - Model Comparison Logs - {compare_models.py:95} - INFO - STEGO model loaded successfully
+[2025-10-28 22:43:50] - Model Comparison Logs - {compare_models.py:330} - INFO - Found 2 test images
+[2025-10-28 22:43:50] - Model Comparison Logs - {compare_models.py:338} - INFO - Processing N-33-60-D-c-4-2.tif
+[2025-10-28 22:45:09] - Model Comparison Logs - {compare_models.py:338} - INFO - Processing N-34-97-D-c-2-4.tif
+[2025-10-28 22:46:30] - Model Comparison Logs - {compare_models.py:431} - INFO - Generating comparison report...
+[2025-10-28 22:46:31] - Model Comparison Logs - {compare_models.py:385} - INFO - Model comparison completed!

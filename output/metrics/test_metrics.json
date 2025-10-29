@@ -1,0 +1,94 @@
+{
+  "per_image_metrics": [
+    {
+      "filename": "N-33-60-D-c-4-2.tif",
+      "pixel_accuracy": 0.9161016401712134,
+      "mean_pixel_accuracy": 0.972033880057071,
+      "frequency_weighted_iou": 0.9161016401712134,
+      "mean_iou": 0.30536721339040446,
+      "per_class_iou": {
+        "background": 0.9161016401712134,
+        "building": 0.0,
+        "water": 0.0
+      },
+      "map_50": 0.3333333333333333,
+      "map_75": 0.3333333333333333,
+      "mean_dice": 0.3187380115838932,
+      "per_class_map_50": {
+        "background": 1.0,
+        "building": 0.0,
+        "water": 0.0
+      },
+      "per_class_map_75": {
+        "background": 1.0,
+        "building": 0.0,
+        "water": 0.0
+      },
+      "per_class_dice": {
+        "background": 0.9562140347516795,
+        "building": 0.0,
+        "water": 0.0
+      }
+    },
+    {
+      "filename": "N-34-97-D-c-2-4.tif",
+      "pixel_accuracy": 0.7692551977071796,
+      "mean_pixel_accuracy": 0.9230850659023933,
+      "frequency_weighted_iou": 0.7692551977071796,
+      "mean_iou": 0.25641839923572657,
+      "per_class_iou": {
+        "background": 0.7692551977071796,
+        "building": 0.0,
+        "water": 0.0
+      },
+      "map_50": 0.3333333333333333,
+      "map_75": 0.3333333333333333,
+      "mean_dice": 0.2898602751802287,
+      "per_class_map_50": {
+        "background": 1.0,
+        "building": 0.0,
+        "water": 0.0
+      },
+      "per_class_map_75": {
+        "background": 1.0,
+        "building": 0.0,
+        "water": 0.0
+      },
+      "per_class_dice": {
+        "background": 0.8695808255406862,
+        "building": 0.0,
+        "water": 0.0
+      }
+    }
+  ],
+  "overall_metrics": {
+    "pixel_accuracy": 0.8420805891032308,
+    "mean_pixel_accuracy": 0.9473601963677436,
+    "frequency_weighted_iou": 0.8420805891032308,
+    "mean_iou": 0.2806935297010769,
+    "per_class_iou": {
+      "background": 0.8420805891032308,
+      "building": 0.0,
+      "water": 0.0
+    },
+    "map_50": 0.3333333333333333,
+    "map_75": 0.3333333333333333,
+    "mean_dice": 0.30475705716841117,
+    "per_class_map_50": {
+      "background": 1.0,
+      "building": 0.0,
+      "water": 0.0
+    },
+    "per_class_map_75": {
+      "background": 1.0,
+      "building": 0.0,
+      "water": 0.0
+    },
+    "per_class_dice": {
+      "background": 0.9142711715052335,
+      "building": 0.0,
+      "water": 0.0
+    }
+  },
+  "per_class_metrics": {}
+}

@@ -368,3 +368,105 @@
 [2025-10-22 17:10:02] - Land Cover Semantic Segmentation Test Logs - {inference.py:204} - INFO - Classes present in the predicted mask after filtering according to user input of 'test_classes': ['background', 'building', 'water']
 [2025-10-22 17:10:02] - Land Cover Semantic Segmentation Test Logs - {inference.py:214} - INFO - Predicted mask written successfully!
 [2025-10-22 17:10:04] - Land Cover Semantic Segmentation Test Logs - {inference.py:228} - INFO - Prediction plot saved successfully!
+[2025-10-28 22:10:26] - Land Cover Semantic Segmentation Test Logs - {test.py:95} - INFO - Total images found to test: 2
+[2025-10-28 22:10:26] - Land Cover Semantic Segmentation Test Logs - {test.py:102} - INFO - Preparing image and ground truth mask file N-33-60-D-c-4-2.tif...
+[2025-10-28 22:10:27] - Land Cover Semantic Segmentation Test Logs - {test.py:148} - INFO - Image and ground truth mask preparation done successfully!
+[2025-10-28 22:10:27] - Land Cover Semantic Segmentation Test Logs - {test.py:153} - INFO - Predicting image file N-33-60-D-c-4-2.tif...
+[2025-10-28 22:10:53] - Land Cover Semantic Segmentation Test Logs - {test.py:192} - INFO - Total classes found in the predicted mask: ['background', 'building', 'woodland', 'water']
+[2025-10-28 22:10:54] - Land Cover Semantic Segmentation Test Logs - {test.py:205} - INFO - Classes present in the predicted mask after filtering according to user input of 'test_classes': ['background', 'building', 'water']
+[2025-10-28 22:10:54] - Land Cover Semantic Segmentation Test Logs - {test.py:215} - INFO - Predicted mask written successfully!
+[2025-10-28 22:10:57] - Land Cover Semantic Segmentation Test Logs - {test.py:229} - INFO - Prediction plot saved successfully!
+[2025-10-28 22:10:57] - Land Cover Semantic Segmentation Test Logs - {test.py:102} - INFO - Preparing image and ground truth mask file N-34-97-D-c-2-4.tif...
+[2025-10-28 22:10:58] - Land Cover Semantic Segmentation Test Logs - {test.py:148} - INFO - Image and ground truth mask preparation done successfully!
+[2025-10-28 22:10:58] - Land Cover Semantic Segmentation Test Logs - {test.py:153} - INFO - Predicting image file N-34-97-D-c-2-4.tif...
+[2025-10-28 22:11:24] - Land Cover Semantic Segmentation Test Logs - {test.py:192} - INFO - Total classes found in the predicted mask: ['background', 'building', 'woodland', 'water']
+[2025-10-28 22:11:24] - Land Cover Semantic Segmentation Test Logs - {test.py:205} - INFO - Classes present in the predicted mask after filtering according to user input of 'test_classes': ['background', 'building', 'water']
+[2025-10-28 22:11:24] - Land Cover Semantic Segmentation Test Logs - {test.py:215} - INFO - Predicted mask written successfully!
+[2025-10-28 22:11:26] - Land Cover Semantic Segmentation Test Logs - {test.py:229} - INFO - Prediction plot saved successfully!
+[2025-10-28 22:11:38] - Land Cover Semantic Segmentation Test Logs - {inference.py:95} - INFO - Total images found to test: 2
+[2025-10-28 22:11:38] - Land Cover Semantic Segmentation Test Logs - {inference.py:102} - INFO - Preparing image and ground truth mask file N-33-60-D-c-4-2.tif...
+[2025-10-28 22:11:39] - Land Cover Semantic Segmentation Test Logs - {inference.py:147} - INFO - Image and ground truth mask preparation done successfully!
+[2025-10-28 22:11:39] - Land Cover Semantic Segmentation Test Logs - {inference.py:152} - INFO - Predicting image file N-33-60-D-c-4-2.tif...
+[2025-10-28 22:12:06] - Land Cover Semantic Segmentation Test Logs - {inference.py:191} - INFO - Total classes found in the predicted mask: ['background', 'building', 'woodland', 'water']
+[2025-10-28 22:12:07] - Land Cover Semantic Segmentation Test Logs - {inference.py:204} - INFO - Classes present in the predicted mask after filtering according to user input of 'test_classes': ['background', 'building', 'water']
+[2025-10-28 22:12:07] - Land Cover Semantic Segmentation Test Logs - {inference.py:214} - INFO - Predicted mask written successfully!
+[2025-10-28 22:12:09] - Land Cover Semantic Segmentation Test Logs - {inference.py:228} - INFO - Prediction plot saved successfully!
+[2025-10-28 22:12:09] - Land Cover Semantic Segmentation Test Logs - {inference.py:102} - INFO - Preparing image and ground truth mask file N-34-97-D-c-2-4.tif...
+[2025-10-28 22:12:09] - Land Cover Semantic Segmentation Test Logs - {inference.py:147} - INFO - Image and ground truth mask preparation done successfully!
+[2025-10-28 22:12:09] - Land Cover Semantic Segmentation Test Logs - {inference.py:152} - INFO - Predicting image file N-34-97-D-c-2-4.tif...
+[2025-10-28 22:12:37] - Land Cover Semantic Segmentation Test Logs - {inference.py:191} - INFO - Total classes found in the predicted mask: ['background', 'building', 'woodland', 'water']
+[2025-10-28 22:12:37] - Land Cover Semantic Segmentation Test Logs - {inference.py:204} - INFO - Classes present in the predicted mask after filtering according to user input of 'test_classes': ['background', 'building', 'water']
+[2025-10-28 22:12:37] - Land Cover Semantic Segmentation Test Logs - {inference.py:214} - INFO - Predicted mask written successfully!
+[2025-10-28 22:12:39] - Land Cover Semantic Segmentation Test Logs - {inference.py:228} - INFO - Prediction plot saved successfully!
+[2025-10-28 22:14:34] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:205} - INFO - Total images found to test: 2
+[2025-10-28 22:14:34] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:223} - INFO - Preparing image and ground truth mask file N-33-60-D-c-4-2.tif...
+[2025-10-28 22:14:35] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:269} - INFO - Image and ground truth mask preparation done successfully!
+[2025-10-28 22:14:35] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:274} - INFO - Predicting image file N-33-60-D-c-4-2.tif...
+[2025-10-28 22:15:05] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:313} - INFO - Total classes found in the predicted mask: ['background', 'building', 'woodland', 'water']
+[2025-10-28 22:15:06] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:326} - INFO - Classes present in the predicted mask after filtering according to user input of 'test_classes': ['background', 'building', 'water']
+[2025-10-28 22:15:06] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:336} - INFO - Predicted mask written successfully!
+[2025-10-28 22:15:08] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:350} - INFO - Prediction plot saved successfully!
+[2025-10-28 22:15:08] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:358} - INFO - Calculating metrics for N-33-60-D-c-4-2.tif...
+[2025-10-28 22:15:10] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:421} - INFO - Metrics for N-33-60-D-c-4-2.tif:
+[2025-10-28 22:15:10] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:422} - INFO -   Pixel Accuracy: 0.9161
+[2025-10-28 22:15:10] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:424} - INFO -   Mean IoU: 0.3054
+[2025-10-28 22:15:10] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:425} - INFO -   mAP@50: 0.3333
+[2025-10-28 22:15:10] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:426} - INFO -   mAP@75: 0.3333
+[2025-10-28 22:15:10] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:427} - INFO -   Mean Dice: 0.3187
+[2025-10-28 22:15:10] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:223} - INFO - Preparing image and ground truth mask file N-34-97-D-c-2-4.tif...
+[2025-10-28 22:15:12] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:269} - INFO - Image and ground truth mask preparation done successfully!
+[2025-10-28 22:15:12] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:274} - INFO - Predicting image file N-34-97-D-c-2-4.tif...
+[2025-10-28 22:15:41] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:313} - INFO - Total classes found in the predicted mask: ['background', 'building', 'woodland', 'water']
+[2025-10-28 22:15:41] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:326} - INFO - Classes present in the predicted mask after filtering according to user input of 'test_classes': ['background', 'building', 'water']
+[2025-10-28 22:15:41] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:336} - INFO - Predicted mask written successfully!
+[2025-10-28 22:15:43] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:350} - INFO - Prediction plot saved successfully!
+[2025-10-28 22:15:43] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:358} - INFO - Calculating metrics for N-34-97-D-c-2-4.tif...
+[2025-10-28 22:15:46] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:421} - INFO - Metrics for N-34-97-D-c-2-4.tif:
+[2025-10-28 22:15:46] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:422} - INFO -   Pixel Accuracy: 0.7693
+[2025-10-28 22:15:46] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:424} - INFO -   Mean IoU: 0.2564
+[2025-10-28 22:15:46] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:425} - INFO -   mAP@50: 0.3333
+[2025-10-28 22:15:46] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:426} - INFO -   mAP@75: 0.3333
+[2025-10-28 22:15:46] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:427} - INFO -   Mean Dice: 0.2899
+[2025-10-28 22:15:46] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:439} - INFO - Calculating overall metrics across all test images...
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:506} - INFO - Overall Metrics Across All Test Images:
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:507} - INFO -   Pixel Accuracy: 0.8421
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:509} - INFO -   Mean Pixel Accuracy: 0.9474
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:511} - INFO -   Mean IoU: 0.2807
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:512} - INFO -   mAP@50: 0.3333
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:513} - INFO -   mAP@75: 0.3333
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:514} - INFO -   Mean Dice: 0.3048
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:515} - INFO -   Frequency Weighted IoU: 0.8421
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:520} - INFO - Per-Class Metrics:
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:532} - INFO -   background:
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:533} - INFO -     IoU: 0.8421
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:535} - INFO -     AP@50: 1.0000
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:537} - INFO -     AP@75: 1.0000
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:539} - INFO -     Dice: 0.9143
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:532} - INFO -   building:
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:533} - INFO -     IoU: 0.0000
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:535} - INFO -     AP@50: 0.0000
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:537} - INFO -     AP@75: 0.0000
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:539} - INFO -     Dice: 0.0000
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:532} - INFO -   water:
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:533} - INFO -     IoU: 0.0000
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:535} - INFO -     AP@50: 0.0000
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:537} - INFO -     AP@75: 0.0000
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:539} - INFO -     Dice: 0.0000
+[2025-10-28 22:15:51] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:548} - INFO - Metrics saved to: D:/Sarthak/VScode workshop/Projects/test/Terra_Mask/output/metrics\test_metrics.json
+[2025-10-28 22:15:53] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:597} - INFO - Summary metrics saved to: D:/Sarthak/VScode workshop/Projects/test/Terra_Mask/output/metrics\test_metrics_summary.csv
+[2025-10-28 22:15:53] - Land Cover Semantic Segmentation Test Logs - {test_with_metrics.py:598} - INFO - Per-class metrics saved to: D:/Sarthak/VScode workshop/Projects/test/Terra_Mask/output/metrics\test_metrics_per_class.csv
+[2025-10-28 22:26:57] - Land Cover Semantic Segmentation Test Logs - {inference.py:95} - INFO - Total images found to test: 2
+[2025-10-28 22:26:57] - Land Cover Semantic Segmentation Test Logs - {inference.py:102} - INFO - Preparing image and ground truth mask file N-33-60-D-c-4-2.tif...
+[2025-10-28 22:26:57] - Land Cover Semantic Segmentation Test Logs - {inference.py:147} - INFO - Image and ground truth mask preparation done successfully!
+[2025-10-28 22:26:57] - Land Cover Semantic Segmentation Test Logs - {inference.py:152} - INFO - Predicting image file N-33-60-D-c-4-2.tif...
+[2025-10-28 22:27:27] - Land Cover Semantic Segmentation Test Logs - {inference.py:191} - INFO - Total classes found in the predicted mask: ['background', 'building', 'woodland', 'water']
+[2025-10-28 22:27:27] - Land Cover Semantic Segmentation Test Logs - {inference.py:204} - INFO - Classes present in the predicted mask after filtering according to user input of 'test_classes': ['background', 'building', 'water']
+[2025-10-28 22:27:27] - Land Cover Semantic Segmentation Test Logs - {inference.py:214} - INFO - Predicted mask written successfully!
+[2025-10-28 22:27:29] - Land Cover Semantic Segmentation Test Logs - {inference.py:228} - INFO - Prediction plot saved successfully!
+[2025-10-28 22:27:29] - Land Cover Semantic Segmentation Test Logs - {inference.py:102} - INFO - Preparing image and ground truth mask file N-34-97-D-c-2-4.tif...
+[2025-10-28 22:27:30] - Land Cover Semantic Segmentation Test Logs - {inference.py:147} - INFO - Image and ground truth mask preparation done successfully!
+[2025-10-28 22:27:30] - Land Cover Semantic Segmentation Test Logs - {inference.py:152} - INFO - Predicting image file N-34-97-D-c-2-4.tif...
+[2025-10-28 22:27:58] - Land Cover Semantic Segmentation Test Logs - {inference.py:191} - INFO - Total classes found in the predicted mask: ['background', 'building', 'woodland', 'water']
+[2025-10-28 22:27:58] - Land Cover Semantic Segmentation Test Logs - {inference.py:204} - INFO - Classes present in the predicted mask after filtering according to user input of 'test_classes': ['background', 'building', 'water']
+[2025-10-28 22:27:59] - Land Cover Semantic Segmentation Test Logs - {inference.py:214} - INFO - Predicted mask written successfully!
+[2025-10-28 22:28:00] - Land Cover Semantic Segmentation Test Logs - {inference.py:228} - INFO - Prediction plot saved successfully!
